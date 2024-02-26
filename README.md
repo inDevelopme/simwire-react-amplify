@@ -68,3 +68,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Get the React frontend working with the backend containers locally
+### Install NodeJS and Visual Studio
+Use the following link to [install NodeJS](https://nodejs.org/en/download/current)
+
+Make sure to install ***choco*** if you are using a windows environment; the windows install will give you this option.  
+Do a system reboot if you encounter an error during the installation related to errors with Visual Studio.
+Run the command after the reboot: `choco install nodejs` to complete / confirm the installation of choco
+Next, install Visual Studio >= 2019
+
+### Install React Dependencies
+Navigate to the "frontend" folder. Now run the following commands in the below sequence:
+- npm install
+- npm install react-scripts
+- npm start 
+
+You may get a warning about vulnerabilities but that is fine. These are nodejs vulnerabilities and ReactJS vulnerabilities.  
+You are now ready to run the backend starting with the containers in the next section. 
+
+### Using React when Pycharm is acting as webserver for debugging
+Make sure to run the debugger or update the `const flaskapiUrl = 'http://127.0.0.1:5000'` line in the `login.js`.  
+Also make sure to update the required environment variable for database connection and rebuild the container.  
+Otherwise, you will get refusal to connect when testing locally.
